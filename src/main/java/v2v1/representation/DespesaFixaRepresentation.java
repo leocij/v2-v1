@@ -1,5 +1,7 @@
 package v2v1.representation;
 
+import java.math.BigDecimal;
+
 import org.springframework.hateoas.ResourceSupport;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -16,6 +18,8 @@ public class DespesaFixaRepresentation extends ResourceSupport {
 	@JsonInclude(Include.NON_NULL)
 	private String descricao;
 	@JsonInclude(Include.NON_NULL)
+	private BigDecimal valor;
+	@JsonInclude(Include.NON_NULL)
 	private String mes;
 	@JsonInclude(Include.NON_NULL)
 	private int ano;
@@ -28,6 +32,7 @@ public class DespesaFixaRepresentation extends ResourceSupport {
 		this.identifier = despesaFixa.getId();
 		this.diaPgto = despesaFixa.getDiaPgto();
 		this.descricao = despesaFixa.getDescricao();
+		this.valor = despesaFixa.getValor();
 		this.mes = despesaFixa.getMes();
 		this.ano = despesaFixa.getAno();
 	}
@@ -37,6 +42,7 @@ public class DespesaFixaRepresentation extends ResourceSupport {
 		despesaFixa.setId(despesaFixaRepresentation.getIdentifier());
 		despesaFixa.setDiaPgto(despesaFixaRepresentation.getDiaPgto());
 		despesaFixa.setDescricao(despesaFixaRepresentation.getDescricao());
+		despesaFixa.setValor(despesaFixaRepresentation.getValor());
 		despesaFixa.setMes(despesaFixaRepresentation.getMes());
 		despesaFixa.setAno(despesaFixaRepresentation.getAno());
 
@@ -65,6 +71,14 @@ public class DespesaFixaRepresentation extends ResourceSupport {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	public String getMes() {

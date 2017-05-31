@@ -1,6 +1,7 @@
 package v2v1.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ public class DespesaFixa implements Serializable {
 	private Long id;
 	private int diaPgto;
 	private String descricao;
+	private BigDecimal valor;
 	private String mes;
 	private int ano;
 
@@ -23,10 +25,11 @@ public class DespesaFixa implements Serializable {
 		super();
 	}
 
-	public DespesaFixa(Long id, int diaPgto, String descricao, String mes, int ano) {
+	public DespesaFixa(Long id, int diaPgto, BigDecimal valor, String descricao, String mes, int ano) {
 		super();
 		this.id = id;
 		this.diaPgto = diaPgto;
+		this.valor = valor;
 		this.descricao = descricao;
 		this.mes = mes;
 		this.ano = ano;
@@ -46,6 +49,14 @@ public class DespesaFixa implements Serializable {
 
 	public void setDiaPgto(int diaPgto) {
 		this.diaPgto = diaPgto;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 
 	public String getDescricao() {
@@ -74,8 +85,8 @@ public class DespesaFixa implements Serializable {
 
 	@Override
 	public String toString() {
-		return "DespesaFixa [id=" + id + ", diaPgto=" + diaPgto + ", descricao=" + descricao + ", mes=" + mes + ", ano="
-				+ ano + "]";
+		return "DespesaFixa [id=" + id + ", diaPgto=" + diaPgto + ", descricao=" + descricao + ", valor=" + valor
+				+ ", mes=" + mes + ", ano=" + ano + "]";
 	}
 
 }
