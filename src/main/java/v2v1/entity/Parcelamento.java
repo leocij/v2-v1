@@ -1,6 +1,7 @@
 package v2v1.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,13 +20,13 @@ public class Parcelamento implements Serializable {
 	private String mes;
 	private int ano;
 	private int quantParcelas;
-	private int valorParcela;
+	private BigDecimal valorParcela;
 
 	public Parcelamento() {
 		super();
 	}
 
-	public Parcelamento(Long id, int dia, String descricao, String mes, int ano, int quantParcelas, int valorParcela) {
+	public Parcelamento(Long id, int dia, String descricao, String mes, int ano, int quantParcelas, BigDecimal valorParcela) {
 		super();
 		this.id = id;
 		this.dia = dia;
@@ -84,11 +85,11 @@ public class Parcelamento implements Serializable {
 		this.quantParcelas = quantParcelas;
 	}
 
-	public int getValorParcela() {
+	public BigDecimal getValorParcela() {
 		return valorParcela;
 	}
 
-	public void setValorParcela(int valorParcela) {
+	public void setValorParcela(BigDecimal valorParcela) {
 		this.valorParcela = valorParcela;
 	}
 

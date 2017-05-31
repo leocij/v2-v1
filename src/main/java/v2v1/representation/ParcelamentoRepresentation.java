@@ -1,5 +1,7 @@
 package v2v1.representation;
 
+import java.math.BigDecimal;
+
 import org.springframework.hateoas.ResourceSupport;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -22,7 +24,7 @@ public class ParcelamentoRepresentation extends ResourceSupport {
 	@JsonInclude(Include.NON_NULL)
 	private int quantParcelas;
 	@JsonInclude(Include.NON_NULL)
-	private int valorParcela;
+	private BigDecimal valorParcela;
 
 	public ParcelamentoRepresentation() {
 		super();
@@ -99,11 +101,11 @@ public class ParcelamentoRepresentation extends ResourceSupport {
 		this.quantParcelas = quantParcelas;
 	}
 
-	public int getValorParcela() {
+	public BigDecimal getValorParcela() {
 		return valorParcela;
 	}
 
-	public void setValorParcela(int valorParcela) {
+	public void setValorParcela(BigDecimal valorParcela) {
 		this.valorParcela = valorParcela;
 	}
 
